@@ -28,7 +28,6 @@ export function Footer() {
               {[
                 { href: "#about", label: "О проекте" },
                 { href: "#services", label: "Возможности" },
-                { href: "#portfolio", label: "Достижения" },
               ].map((item) => (
                 <li key={item.href}>
                   <a

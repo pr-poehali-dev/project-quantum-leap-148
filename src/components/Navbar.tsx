@@ -31,7 +31,6 @@ export function Navbar() {
             {[
               { href: "#about", label: "О проекте" },
               { href: "#services", label: "Возможности" },
-              { href: "#portfolio", label: "Достижения" },
             ].map((item) => (
               <a
                 key={item.href}

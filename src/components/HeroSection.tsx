@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Sparkles, Users, Gamepad2 } from "lucide-react"
+import { ArrowRight, Users, Gamepad2 } from "lucide-react"
 import { useEffect, useState } from "react"
 
 export function HeroSection() {
@@ -14,132 +14,96 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/8 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
         <div
-          className="absolute w-[500px] h-[500px] rounded-full bg-muted/40 blur-3xl animate-pulse"
+          className="absolute w-[600px] h-[600px] rounded-full blur-[120px] transition-all duration-[1500ms] ease-out"
           style={{
-            top: "20%",
-            left: "10%",
-            animationDuration: "4s",
+            background: 'radial-gradient(circle, rgba(180,0,0,0.12) 0%, transparent 70%)',
+            left: `${mousePosition.x - 300}px`,
+            top: `${mousePosition.y - 300}px`,
           }}
         />
-        <div
-          className="absolute w-[400px] h-[400px] rounded-full bg-muted/30 blur-3xl animate-pulse"
-          style={{
-            bottom: "10%",
-            right: "15%",
-            animationDuration: "6s",
-            animationDelay: "1s",
-          }}
+        <div className="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full blur-[100px]"
+          style={{ background: 'radial-gradient(circle, rgba(180,0,0,0.15) 0%, transparent 70%)' }}
         />
-        <div
-          className="absolute w-[300px] h-[300px] rounded-full bg-muted/20 blur-3xl transition-all duration-1000 ease-out"
-          style={{
-            left: `${mousePosition.x - 150}px`,
-            top: `${mousePosition.y - 150}px`,
-          }}
-        />
+        <div className="absolute inset-0 bg-grid-pattern opacity-30" />
       </div>
 
       <div className="absolute inset-0 pointer-events-none">
         <Gamepad2
-          className="absolute text-muted-foreground/30 animate-float"
-          style={{
-            top: "15%",
-            left: "15%",
-            animationDelay: "0s",
-          }}
-          size={40}
+          className="absolute text-primary/20 animate-float"
+          style={{ top: "15%", left: "8%", animationDelay: "0s" }}
+          size={48}
         />
         <Users
-          className="absolute text-muted-foreground/30 animate-float"
-          style={{
-            top: "25%",
-            right: "20%",
-            animationDelay: "2s",
-          }}
-          size={35}
-        />
-        <Sparkles
-          className="absolute text-muted-foreground/30 animate-float"
-          style={{
-            bottom: "20%",
-            left: "20%",
-            animationDelay: "1s",
-          }}
-          size={30}
+          className="absolute text-primary/15 animate-float"
+          style={{ top: "20%", right: "10%", animationDelay: "2s" }}
+          size={40}
         />
       </div>
 
       <div className="container mx-auto text-center max-w-5xl relative z-10">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 animate-fade-in-up">
-          <Sparkles className="w-4 h-4 text-primary" />
-          <span className="text-sm font-medium text-primary">Лучший CRMP сервер — живи по своим правилам</span>
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 border border-primary/30 bg-primary/5 animate-fade-in-up">
+          <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+          <span className="text-xs font-medium text-primary tracking-[0.2em] uppercase">Сервер онлайн — 500+ игроков</span>
         </div>
 
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 animate-fade-in-up text-balance">
-          Город, который{" "}
-          <span className="text-primary relative inline-block">
-            не спит
-            <svg
-              className="absolute -bottom-2 left-0 w-full"
-              height="12"
-              viewBox="0 0 200 12"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M2 10C50 5 150 5 198 10"
-                stroke="currentColor"
-                strokeWidth="3"
-                strokeLinecap="round"
-                className="text-primary"
-              />
-            </svg>
-          </span>
+        <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight mb-4 animate-fade-in-up glitch leading-none">
+          <span className="text-foreground">CITY</span>
+          <span className="text-primary text-glow-red">RP</span>
         </h1>
 
-        <p className="text-xl sm:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto animate-fade-in-up animate-delay-100 leading-relaxed">
+        <p className="text-lg sm:text-xl text-muted-foreground/80 mb-4 max-w-2xl mx-auto animate-fade-in-up animate-delay-100 leading-relaxed font-light" style={{ fontFamily: 'Roboto, sans-serif', textTransform: 'none', letterSpacing: 'normal', fontWeight: 300 }}>
           Реалистичный ролевой мир в GTA SAMP. Своя экономика, фракции, бизнес и живые события — начни свою историю прямо сейчас.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up animate-delay-200 mb-12">
+        <div className="flex items-center justify-center gap-4 mb-10 animate-fade-in-up animate-delay-100">
+          <div className="h-px w-16 bg-primary/50" />
+          <span className="text-xs text-muted-foreground tracking-[0.3em] uppercase">Выживи. Или стань легендой.</span>
+          <div className="h-px w-16 bg-primary/50" />
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up animate-delay-200 mb-16">
           <Button
             size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg group shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all"
+            className="bg-primary hover:bg-primary/80 text-primary-foreground font-bold px-10 py-6 text-base tracking-widest uppercase rounded-none glow-red border-0 transition-all"
+            style={{ fontFamily: 'Oswald, sans-serif' }}
             asChild
           >
             <a href="#contact">
               Начать играть
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 h-5 w-5" />
             </a>
           </Button>
           <Button
             size="lg"
             variant="outline"
-            className="border-2 border-primary/20 text-foreground hover:bg-primary/5 hover:border-primary font-semibold px-8 py-6 text-lg backdrop-blur-sm bg-transparent"
+            className="border border-foreground/20 text-foreground hover:bg-foreground/5 hover:border-primary/50 font-medium px-10 py-6 text-base tracking-widest uppercase rounded-none bg-transparent transition-all"
+            style={{ fontFamily: 'Oswald, sans-serif' }}
             asChild
           >
             <a href="#portfolio">Наши достижения</a>
           </Button>
         </div>
 
-        <div className="flex flex-wrap justify-center items-center gap-8 text-sm text-muted-foreground animate-fade-in-up animate-delay-300">
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span>500+ игроков онлайн</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" style={{ animationDelay: "0.5s" }} />
-            <span>20+ фракций</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" style={{ animationDelay: "1s" }} />
-            <span>3+ года на рынке</span>
-          </div>
+        <div className="flex flex-wrap justify-center items-center gap-12 animate-fade-in-up animate-delay-300">
+          {[
+            { value: "500+", label: "Игроков онлайн" },
+            { value: "20+", label: "Фракций" },
+            { value: "3+", label: "Года работы" },
+          ].map((stat, i) => (
+            <div key={i} className="text-center">
+              <div className="text-3xl font-black text-primary text-glow-red" style={{ fontFamily: 'Oswald, sans-serif' }}>{stat.value}</div>
+              <div className="text-xs text-muted-foreground tracking-widest uppercase mt-1">{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
+
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
     </section>
   )
 }

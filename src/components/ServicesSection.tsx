@@ -1,74 +1,80 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Users, Briefcase, Shield, Map, Swords, Car } from "lucide-react"
 
 const services = [
   {
     icon: Users,
-    title: "Фракции и организации",
+    title: "Фракции",
     description:
-      "Вступай в полицию, мафию, армию, медицину или создай собственную банду. Каждая фракция — живая структура со своей иерархией, уставом и заданиями.",
+      "Вступай в полицию, мафию, армию или медицину. Каждая фракция — живая структура со своей иерархией и заданиями.",
   },
   {
     icon: Briefcase,
-    title: "Бизнес и экономика",
+    title: "Бизнес",
     description:
-      "Открывай магазины, заправки, казино и рестораны. Реалистичная экономика с биржей, недвижимостью и инвестициями позволяет строить настоящую империю.",
+      "Открывай магазины, казино и рестораны. Реалистичная экономика с биржей и недвижимостью — строй свою империю.",
   },
   {
     icon: Shield,
-    title: "Правоохранительная система",
+    title: "Закон и порядок",
     description:
-      "Полноценная система законов, штрафов и тюрьмы. Играй за стражей порядка или нарушай закон — выбор за тобой, но последствия реальны.",
+      "Полноценная система законов, штрафов и тюрьмы. Играй за стражей порядка или нарушай закон — последствия реальны.",
   },
   {
     icon: Map,
-    title: "Живой открытый мир",
+    title: "Открытый мир",
     description:
-      "Кастомная карта с уникальными локациями, интерьерами и ивентами. Каждый район города живёт своей жизнью — от трущоб до деловых кварталов.",
+      "Кастомная карта с уникальными локациями и интерьерами. Каждый район живёт своей жизнью.",
   },
   {
     icon: Swords,
-    title: "Ивенты и события",
+    title: "Ивенты",
     description:
-      "Регулярные сюжетные события, войны фракций, выборы мэра и криминальные разборки. Администрация проводит живые ивенты каждую неделю.",
+      "Регулярные сюжетные события, войны фракций и выборы мэра. Администрация проводит живые ивенты каждую неделю.",
   },
   {
     icon: Car,
-    title: "Транспорт и кастомизация",
+    title: "Транспорт",
     description:
-      "Сотни уникальных автомобилей, тюнинг и гаражи. Персонализируй своего персонажа — внешность, одежда, татуировки и стиль жизни.",
+      "Сотни уникальных авто, тюнинг и гаражи. Персонализируй персонажа — внешность, одежда и стиль жизни.",
   },
 ]
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 animate-pulse" />
+    <section id="services" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/3 to-transparent pointer-events-none" />
 
       <div className="container mx-auto max-w-7xl relative z-10">
-        <div className="inline-block mb-4 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mx-auto block w-fit">
-          Возможности сервера
+        <div className="mb-16">
+          <p className="text-xs text-primary tracking-[0.3em] uppercase mb-3" style={{ fontFamily: 'Oswald, sans-serif' }}>
+            // Возможности сервера
+          </p>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-balance">
+            Что тебя <span className="text-primary">ждёт</span>
+          </h2>
+          <div className="h-px w-24 bg-primary mt-4" />
         </div>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 text-balance">
-          Что тебя <span className="text-primary">ждёт</span>
-        </h2>
-        <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto text-pretty leading-relaxed text-lg">
-          CityRP — это не просто сервер. Это живой город с тысячами возможностей, где каждый выбирает свой путь.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
           {services.map((service, index) => (
             <Card
               key={index}
-              className="group hover:border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-2 bg-background/50 backdrop-blur-sm"
+              className="group rounded-none border-0 bg-card hover:bg-primary/5 transition-all duration-300"
             >
-              <CardHeader>
-                <div className="mb-4 inline-flex p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
-                  <service.icon className="h-6 w-6" />
+              <CardHeader className="pb-3">
+                <div className="mb-4 inline-flex p-3 border border-primary/20 text-primary group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300">
+                  <service.icon className="h-5 w-5" />
                 </div>
-                <CardTitle className="text-xl group-hover:text-primary transition-colors">{service.title}</CardTitle>
+                <CardTitle
+                  className="text-lg tracking-widest group-hover:text-primary transition-colors"
+                  style={{ fontFamily: 'Oswald, sans-serif' }}
+                >
+                  {service.title}
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base leading-relaxed">{service.description}</CardDescription>
+                <p className="text-sm text-muted-foreground leading-relaxed font-light">{service.description}</p>
               </CardContent>
             </Card>
           ))}

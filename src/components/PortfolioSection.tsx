@@ -1,72 +1,86 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { Trophy } from "lucide-react"
+import { Trophy, Star, Zap, Crown } from "lucide-react"
 
 const achievements = [
   {
+    icon: Star,
     title: "Топ-1 по онлайну",
-    category: "Достижение сервера",
-    image: "/placeholder.jpg",
+    category: "Достижение",
     description:
       "CityRP занял первое место в рейтинге SAMP серверов по СНГ с пиковым онлайном более 1500 игроков одновременно.",
     tags: ["#1 в СНГ", "1500+ онлайн", "2024"],
   },
   {
-    title: "Кастомная карта города",
+    icon: Zap,
+    title: "Кастомная карта",
     category: "Разработка",
-    image: "/placeholder.jpg",
     description:
-      "Полностью переработанная карта с 200+ уникальными интерьерами, новыми районами и кастомными объектами — сделано нашей командой.",
-    tags: ["200+ интерьеров", "Кастом", "Маппинг"],
+      "Полностью переработанная карта с 200+ уникальными интерьерами, новыми районами и кастомными объектами.",
+    tags: ["200+ интерьеров", "Кастом маппинг"],
   },
   {
+    icon: Trophy,
     title: "Система бизнеса",
     category: "Геймплей",
-    image: "/placeholder.jpg",
     description:
-      "Уникальная экономическая система с более чем 500 бизнес-объектами, биржей акций и реалистичным рынком недвижимости.",
-    tags: ["500+ бизнесов", "Биржа", "Недвижимость"],
+      "Уникальная экономика с 500+ бизнес-объектами, биржей акций и реалистичным рынком недвижимости.",
+    tags: ["500+ бизнесов", "Биржа акций"],
   },
   {
-    title: "Ролевые ивенты",
+    icon: Crown,
+    title: "300+ живых ивентов",
     category: "Комьюнити",
-    image: "/placeholder.jpg",
     description:
-      "Более 300 живых ивентов за историю сервера: выборы, войны фракций, детективные расследования и сюжетные арки.",
-    tags: ["300+ ивентов", "Живая игра", "Комьюнити"],
+      "Выборы, войны фракций, детективные расследования и сюжетные арки — за всю историю сервера.",
+    tags: ["300+ ивентов", "Живая игра"],
   },
 ]
 
 export function PortfolioSection() {
   return (
-    <section id="portfolio" className="py-20 px-4 sm:px-6 lg:px-8">
+    <section id="portfolio" className="py-24 px-4 sm:px-6 lg:px-8 bg-black/20">
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-balance">Наши достижения</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty leading-relaxed">
-            За годы работы мы создали уникальный игровой мир, которым гордится каждый участник нашего комьюнити.
+        <div className="mb-16">
+          <p className="text-xs text-primary tracking-[0.3em] uppercase mb-3" style={{ fontFamily: 'Oswald, sans-serif' }}>
+            // История сервера
           </p>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-balance">
+            Наши <span className="text-primary">достижения</span>
+          </h2>
+          <div className="h-px w-24 bg-primary mt-4" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border">
           {achievements.map((item, index) => (
             <Card
               key={index}
-              className="group overflow-hidden border-none shadow-md hover:shadow-xl transition-all duration-300"
+              className="group rounded-none border-0 bg-card hover:bg-primary/5 transition-all duration-300"
             >
-              <div className="relative overflow-hidden aspect-video bg-gradient-to-br from-primary/20 to-muted flex items-center justify-center">
-                <Trophy className="h-24 w-24 text-primary/40 group-hover:scale-110 transition-transform duration-500" />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-              <CardContent className="p-6">
-                <p className="text-sm text-primary font-semibold mb-2">{item.category}</p>
-                <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">{item.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {item.tags.map((tag, tagIndex) => (
-                    <span key={tagIndex} className="text-xs px-2 py-1 rounded-full bg-muted text-muted-foreground">
-                      {tag}
-                    </span>
-                  ))}
+              <CardContent className="p-8">
+                <div className="flex items-start gap-5">
+                  <div className="p-4 border border-primary/20 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 flex-shrink-0">
+                    <item.icon className="h-6 w-6" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-xs text-primary tracking-widest uppercase mb-1 font-medium">{item.category}</p>
+                    <h3
+                      className="text-xl font-black tracking-wide mb-2 group-hover:text-primary transition-colors"
+                      style={{ fontFamily: 'Oswald, sans-serif' }}
+                    >
+                      {item.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed font-light mb-4">{item.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {item.tags.map((tag, tagIndex) => (
+                        <span
+                          key={tagIndex}
+                          className="text-xs px-3 py-1 border border-border/50 text-muted-foreground tracking-wide"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </Card>

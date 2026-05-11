@@ -6,18 +6,21 @@ const pricingTiers = [
   {
     name: "Новичок",
     price: "Бесплатно",
+    description: "Для всех желающих",
     features: [
-      "Доступ к базовому контенту",
+      "Доступ к серверу",
       "Стартовый набор предметов",
-      "Базовая поддержка",
       "Участие в публичных ивентах",
-      "Доступ к форуму",
+      "Доступ к форуму и Discord",
+      "Базовая поддержка",
     ],
     highlighted: false,
+    btnText: "Начать играть",
   },
   {
     name: "VIP",
     price: "299",
+    description: "Самый популярный статус",
     features: [
       "Уникальный VIP-скин",
       "x2 к заработку в городе",
@@ -27,10 +30,12 @@ const pricingTiers = [
       "Поддержка 24/7",
     ],
     highlighted: true,
+    btnText: "Купить VIP",
   },
   {
     name: "Premium",
     price: "По запросу",
+    description: "Для самых преданных",
     features: [
       "Все привилегии VIP",
       "Уникальный ник-тег",
@@ -39,91 +44,91 @@ const pricingTiers = [
       "Участие в закрытых ивентах",
     ],
     highlighted: false,
+    btnText: "Связаться с нами",
   },
 ]
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      </div>
+    <section id="pricing" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] blur-[100px] pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(180,0,0,0.08) 0%, transparent 70%)' }}
+      />
 
-      <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-12 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-            </span>
-            Донат-магазин
-          </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-balance">
-            Выбери свой <span className="text-primary">статус в городе</span>
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Поддержи сервер и получи уникальные привилегии — играй с преимуществом
+      <div className="container mx-auto max-w-6xl relative z-10">
+        <div className="mb-16">
+          <p className="text-xs text-primary tracking-[0.3em] uppercase mb-3" style={{ fontFamily: 'Oswald, sans-serif' }}>
+            // Донат-магазин
           </p>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-balance">
+            Выбери свой <span className="text-primary">статус</span>
+          </h2>
+          <div className="h-px w-24 bg-primary mt-4" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">
           {pricingTiers.map((tier, index) => (
             <Card
               key={index}
-              className={`relative group ${
+              className={`relative rounded-none border-0 transition-all duration-300 ${
                 tier.highlighted
-                  ? "border-primary shadow-xl scale-105 bg-gradient-to-b from-background to-primary/5"
-                  : "hover:border-primary/50 hover:shadow-lg"
-              } transition-all duration-300`}
+                  ? "bg-primary/10 ring-1 ring-primary"
+                  : "bg-card hover:bg-primary/5"
+              }`}
             >
               {tier.highlighted && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold shadow-lg">
-                  Популярный
-                </div>
+                <div
+                  className="absolute -top-px left-0 right-0 h-0.5 bg-primary"
+                />
               )}
-              <CardHeader className="text-center pb-8">
-                <CardTitle className="text-2xl mb-2">{tier.name}</CardTitle>
-                <div className="mt-4">
-                  <span className="text-4xl font-bold">
-                    {tier.price === "По запросу" ? (
-                      <span className="text-3xl">{tier.price}</span>
-                    ) : (
-                      <>
-                        <span className="text-lg font-normal text-muted-foreground">от </span>
-                        {tier.price}
-                        <span className="text-lg font-normal text-muted-foreground"> ₽</span>
-                      </>
-                    )}
+              <CardHeader className="border-b border-border/30 pb-6">
+                {tier.highlighted && (
+                  <span className="text-xs text-primary tracking-widest uppercase font-bold mb-2 block" style={{ fontFamily: 'Oswald, sans-serif' }}>
+                    ★ Популярный
                   </span>
+                )}
+                <CardTitle
+                  className="text-2xl tracking-widest"
+                  style={{ fontFamily: 'Oswald, sans-serif' }}
+                >
+                  {tier.name}
+                </CardTitle>
+                <p className="text-xs text-muted-foreground tracking-wide">{tier.description}</p>
+                <div className="mt-4">
+                  {tier.price === "Бесплатно" || tier.price === "По запросу" ? (
+                    <span className="text-3xl font-black text-foreground" style={{ fontFamily: 'Oswald, sans-serif' }}>{tier.price}</span>
+                  ) : (
+                    <div>
+                      <span className="text-4xl font-black text-primary text-glow-red" style={{ fontFamily: 'Oswald, sans-serif' }}>{tier.price}</span>
+                      <span className="text-muted-foreground text-sm ml-1">₽ / мес</span>
+                    </div>
+                  )}
                 </div>
               </CardHeader>
-              <CardContent>
+              <CardContent className="pt-6">
                 <ul className="space-y-3 mb-8">
                   {tier.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start gap-3 group/item">
-                      <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5 group-hover/item:scale-110 transition-transform" />
-                      <span className="text-sm leading-relaxed">{feature}</span>
+                    <li key={featureIndex} className="flex items-start gap-3">
+                      <Check className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-muted-foreground leading-relaxed font-light">{feature}</span>
                     </li>
                   ))}
                 </ul>
                 <QuoteFormDialog
                   packageName={tier.name}
                   variant={tier.highlighted ? "default" : "outline"}
-                  className={`w-full ${tier.highlighted ? "shadow-lg shadow-primary/20" : ""}`}
+                  className={`w-full rounded-none tracking-widest uppercase font-bold ${
+                    tier.highlighted
+                      ? "bg-primary hover:bg-primary/80 glow-red border-0"
+                      : "border-border/50 hover:border-primary/50 hover:bg-primary/5"
+                  }`}
+                  style={{ fontFamily: 'Oswald, sans-serif' }}
                 >
-                  {tier.price === "По запросу" ? "Связаться с нами" : tier.price === "Бесплатно" ? "Начать играть" : "Купить VIP"}
+                  {tier.btnText}
                 </QuoteFormDialog>
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <p className="text-sm text-muted-foreground">
-            Все тарифы включают <span className="text-primary font-semibold">бесплатную настройку хостинга</span> и{" "}
-            <span className="text-primary font-semibold">SSL-сертификат</span>
-          </p>
         </div>
       </div>
     </section>

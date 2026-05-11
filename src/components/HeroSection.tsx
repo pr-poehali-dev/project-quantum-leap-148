@@ -52,7 +52,7 @@ export function HeroSection() {
         </div>
 
         <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight mb-4 animate-fade-in-up glitch leading-none">
-          <span className="text-foreground">REALMY</span>
+          <span className="text-foreground">REALMY </span>
           <span className="text-primary text-glow-red">RP</span>
         </h1>
 

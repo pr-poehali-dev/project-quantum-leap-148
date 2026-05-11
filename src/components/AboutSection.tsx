@@ -12,6 +12,7 @@ const values = [
 
 const stats = [
   { number: "11", label: "Фракций" },
+  { number: "ТОП", label: "Администрация" },
 ]
 
 export function AboutSection() {

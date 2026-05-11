@@ -56,9 +56,20 @@ export function HeroSection() {
           <span className="text-primary text-glow-red">RP</span>
         </h1>
 
-        <p className="text-lg sm:text-xl text-muted-foreground/80 mb-4 max-w-2xl mx-auto animate-fade-in-up animate-delay-100 leading-relaxed font-light" style={{ fontFamily: 'Roboto, sans-serif', textTransform: 'none', letterSpacing: 'normal', fontWeight: 300 }}>
-          Реалистичный ролевой мир в GTA SAMP. Своя экономика, фракции, бизнес и живые события — начни свою историю прямо сейчас.
-        </p>
+        <div className="mb-4 max-w-2xl mx-auto animate-fade-in-up animate-delay-100 text-left">
+          <p className="text-lg sm:text-xl text-muted-foreground/80 leading-relaxed font-light mb-4" style={{ fontFamily: 'Roboto, sans-serif', textTransform: 'none', letterSpacing: 'normal', fontWeight: 300 }}>
+            REALMY RP — это новый игровой проект, вдохновлённый атмосферой и механиками CRMP. Игроки начинают свой путь с базовыми ресурсами: 10 000 игровой валюты, без доната и на четвертом уровне. Такой старт позволяет каждому развиваться с нуля, полагаясь только на свои силы и умения.
+          </p>
+          <p className="text-xs text-primary tracking-widest uppercase mb-2 font-bold" style={{ fontFamily: 'Oswald, sans-serif' }}>Преимущества старта:</p>
+          <ul className="space-y-1">
+            {["Честная конкуренция с другими игроками.", "Возможность самостоятельно выбрать путь развития.", "Полное погружение в ролевую атмосферу с первого дня."].map((item, i) => (
+              <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground/80 font-light" style={{ fontFamily: 'Roboto, sans-serif' }}>
+                <span className="text-primary mt-0.5">—</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
 
         <div className="flex items-center justify-center gap-4 mb-10 animate-fade-in-up animate-delay-100">
           <div className="h-px w-16 bg-primary/50" />

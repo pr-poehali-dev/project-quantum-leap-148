@@ -10,7 +10,6 @@ export function MobileMenu() {
     { href: "#about", label: "О нас" },
     { href: "#services", label: "Услуги" },
     { href: "#portfolio", label: "Портфолио" },
-    { href: "#pricing", label: "Тарифы" },
     { href: "#contact", label: "Контакты" },
   ]
 

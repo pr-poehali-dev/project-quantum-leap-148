@@ -32,7 +32,6 @@ export function Navbar() {
               { href: "#about", label: "О проекте" },
               { href: "#services", label: "Возможности" },
               { href: "#portfolio", label: "Достижения" },
-              { href: "#pricing", label: "Донат" },
               { href: "#contact", label: "Контакты" },
             ].map((item) => (
               <a

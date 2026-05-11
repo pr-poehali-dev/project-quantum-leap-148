@@ -11,10 +11,7 @@ const values = [
 ]
 
 const stats = [
-  { number: "500+", label: "Игроков онлайн" },
-  { number: "20+", label: "Фракций" },
-  { number: "300+", label: "Ивентов" },
-  { number: "3+", label: "Года работы" },
+  { number: "11", label: "Фракций" },
 ]
 
 export function AboutSection() {

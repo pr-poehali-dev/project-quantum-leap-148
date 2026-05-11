@@ -91,9 +91,7 @@ export function HeroSection() {
 
         <div className="flex flex-wrap justify-center items-center gap-12 animate-fade-in-up animate-delay-300">
           {[
-            { value: "500+", label: "Игроков онлайн" },
-            { value: "20+", label: "Фракций" },
-            { value: "3+", label: "Года работы" },
+            { value: "11", label: "Фракций" },
           ].map((stat, i) => (
             <div key={i} className="text-center">
               <div className="text-3xl font-black text-primary text-glow-red" style={{ fontFamily: 'Oswald, sans-serif' }}>{stat.value}</div>

@@ -92,16 +92,7 @@ export function HeroSection() {
 
         </div>
 
-        <div className="flex flex-wrap justify-center items-center gap-12 animate-fade-in-up animate-delay-300">
-          {[
-            { value: "11", label: "Фракций" },
-          ].map((stat, i) => (
-            <div key={i} className="text-center">
-              <div className="text-3xl font-black text-primary text-glow-red" style={{ fontFamily: 'Oswald, sans-serif' }}>{stat.value}</div>
-              <div className="text-xs text-muted-foreground tracking-widest uppercase mt-1">{stat.label}</div>
-            </div>
-          ))}
-        </div>
+
       </div>
 
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />

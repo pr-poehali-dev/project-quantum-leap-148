@@ -8,11 +8,11 @@ export function Footer() {
               className="text-xl font-black tracking-widest mb-4"
               style={{ fontFamily: 'Oswald, sans-serif' }}
             >
-              <span className="text-foreground">CITY</span>
+              <span className="text-foreground">REALMY</span>
               <span className="text-primary">RP</span>
             </h3>
             <p className="text-xs text-muted-foreground leading-relaxed tracking-wide">
-              © 2025 CityRP. Все права защищены.<br />
+              © 2025 RealMyRP. Все права защищены.<br />
               Лучший CRMP сервер в СНГ.
             </p>
           </div>

@@ -6,7 +6,7 @@ export function Logo({ className = "" }: { className?: string }) {
           className="text-xl font-black tracking-widest"
           style={{ fontFamily: 'Oswald, sans-serif' }}
         >
-          <span className="text-foreground">CITY</span>
+          <span className="text-foreground">REALMY</span>
           <span className="text-primary">RP</span>
         </span>
       </div>

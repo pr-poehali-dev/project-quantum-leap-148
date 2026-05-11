@@ -126,7 +126,7 @@ export function ContactSection() {
               {
                 icon: MessageCircle,
                 title: "Discord",
-                value: "discord.gg/cityrp",
+                value: "discord.gg/realmyrp",
               },
             ].map((item, i) => (
               <Card key={i} className="rounded-none border border-border/50 bg-card/50 hover:border-primary/30 transition-colors group">
@@ -157,7 +157,7 @@ export function ContactSection() {
                 >
                   IP Сервера
                 </p>
-                <p className="text-foreground font-mono text-lg font-bold">play.cityrp.ru</p>
+                <p className="text-foreground font-mono text-lg font-bold">play.realmyrp.ru</p>
                 <p className="text-muted-foreground text-xs mt-1">Порт: 7777</p>
               </CardContent>
             </Card>

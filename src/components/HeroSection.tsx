@@ -84,7 +84,7 @@ export function HeroSection() {
             style={{ fontFamily: 'Oswald, sans-serif' }}
             asChild
           >
-            <a href="#contact">
+            <a href="https://t.me/skachatissulky" target="_blank" rel="noopener noreferrer">
               Начать играть
               <ArrowRight className="ml-2 h-5 w-5" />
             </a>

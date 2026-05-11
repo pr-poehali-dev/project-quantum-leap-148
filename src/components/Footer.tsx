@@ -51,13 +51,14 @@ export function Footer() {
             </h4>
             <div className="flex flex-col gap-2">
               {[
-                { label: "Discord", href: "#" },
-                { label: "VKontakte", href: "#" },
-                { label: "Telegram", href: "#" },
+                { label: "VKontakte", href: "https://vk.ru/club232913972" },
+                { label: "Telegram", href: "https://t.me/realmyrpcrmp" },
               ].map((s) => (
                 <a
                   key={s.label}
                   href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-xs text-muted-foreground hover:text-primary transition-colors tracking-widest uppercase"
                   style={{ fontFamily: 'Oswald, sans-serif' }}
                 >

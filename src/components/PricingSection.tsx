@@ -4,39 +4,39 @@ import { QuoteFormDialog } from "@/components/QuoteFormDialog"
 
 const pricingTiers = [
   {
-    name: "Базовый",
-    price: "99 900",
+    name: "Новичок",
+    price: "Бесплатно",
     features: [
-      "До 5 страниц",
-      "Адаптивный дизайн",
-      "Базовая SEO-оптимизация",
-      "Форма обратной связи",
-      "1 месяц поддержки",
+      "Доступ к базовому контенту",
+      "Стартовый набор предметов",
+      "Базовая поддержка",
+      "Участие в публичных ивентах",
+      "Доступ к форуму",
     ],
     highlighted: false,
   },
   {
-    name: "Про",
-    price: "249 900",
+    name: "VIP",
+    price: "299",
     features: [
-      "До 15 страниц",
-      "Премиум-дизайн",
-      "Расширенная SEO-оптимизация",
-      "Интеграция CMS",
-      "Функционал e-commerce",
-      "3 месяца поддержки",
+      "Уникальный VIP-скин",
+      "x2 к заработку в городе",
+      "Приоритетный вход на сервер",
+      "Доступ к VIP-зонам",
+      "Кастомный номер машины",
+      "Поддержка 24/7",
     ],
     highlighted: true,
   },
   {
-    name: "Индивидуальный",
+    name: "Premium",
     price: "По запросу",
     features: [
-      "Неограниченно страниц",
-      "Кастомный функционал",
-      "API-интеграции",
+      "Все привилегии VIP",
+      "Уникальный ник-тег",
+      "Личный дом в городе",
       "Персональный менеджер",
-      "6 месяцев поддержки",
+      "Участие в закрытых ивентах",
     ],
     highlighted: false,
   },
@@ -57,13 +57,13 @@ export function PricingSection() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
             </span>
-            Прозрачные цены
+            Донат-магазин
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-balance">
-            Выберите <span className="text-primary">идеальный тариф</span> для вашего проекта
+            Выбери свой <span className="text-primary">статус в городе</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            От стартапов до крупного бизнеса — у нас есть подходящее решение
+            Поддержи сервер и получи уникальные привилегии — играй с преимуществом
           </p>
         </div>
 
@@ -112,7 +112,7 @@ export function PricingSection() {
                   variant={tier.highlighted ? "default" : "outline"}
                   className={`w-full ${tier.highlighted ? "shadow-lg shadow-primary/20" : ""}`}
                 >
-                  {tier.price === "По запросу" ? "Связаться с нами" : "Выбрать тариф"}
+                  {tier.price === "По запросу" ? "Связаться с нами" : tier.price === "Бесплатно" ? "Начать играть" : "Купить VIP"}
                 </QuoteFormDialog>
               </CardContent>
             </Card>

@@ -73,7 +73,7 @@ export function HeroSection() {
 
         <div className="flex items-center justify-center gap-4 mb-10 animate-fade-in-up animate-delay-100">
           <div className="h-px w-16 bg-primary/50" />
-          <span className="text-xs text-muted-foreground tracking-[0.3em] uppercase">Выживи. Или стань легендой.</span>
+          <span className="text-xs text-muted-foreground tracking-[0.3em] uppercase">Стань легендой.</span>
           <div className="h-px w-16 bg-primary/50" />
         </div>
 
@@ -89,15 +89,7 @@ export function HeroSection() {
               <ArrowRight className="ml-2 h-5 w-5" />
             </a>
           </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="border border-foreground/20 text-foreground hover:bg-foreground/5 hover:border-primary/50 font-medium px-10 py-6 text-base tracking-widest uppercase rounded-none bg-transparent transition-all"
-            style={{ fontFamily: 'Oswald, sans-serif' }}
-            asChild
-          >
-            <a href="#portfolio">Наши достижения</a>
-          </Button>
+
         </div>
 
         <div className="flex flex-wrap justify-center items-center gap-12 animate-fade-in-up animate-delay-300">
